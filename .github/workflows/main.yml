@@ -45,7 +45,7 @@ jobs:
       run: dotnet restore LR2SchoolOlympic.sln
 
     - name: Build project
-      run: dotnet build LR2SchoolOlympic\LR2SchoolOlympic\LR2SchoolOlympic.csproj
+      run: dotnet build LR2SchoolOlympic\LR2SchoolOlympic.csproj
 
     - name: Cleanup
-      run: dotnet clean LR2SchoolOlympic\LR2SchoolOlympic.sln
+      run: dotnet clean LR2SchoolOlympic.sln
