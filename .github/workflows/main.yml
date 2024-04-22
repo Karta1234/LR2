@@ -42,7 +42,7 @@ jobs:
         dotnet-version: '7.0.x'
 
     - name: Install dependencies
-      run: dotnet restore LR2SchoolOlympic\LR2SchoolOlympic.sln
+      run: dotnet restore LR2SchoolOlympic.sln
 
     - name: Build project
       run: dotnet build LR2SchoolOlympic\LR2SchoolOlympic\LR2SchoolOlympic.csproj
