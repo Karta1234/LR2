@@ -8,6 +8,7 @@ public class CentralCommission
     {
         PreparingTask,
         NotPreparingTask
+        
     }
     public Task Task;
     public CentralCommissionState State = CentralCommissionState.NotPreparingTask;

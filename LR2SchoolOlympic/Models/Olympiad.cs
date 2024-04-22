@@ -2,20 +2,20 @@
 
 public class Olympiad
 {
-    public enum OlimpiadState
+    public enum OlympiadState
     {
         Started,
         NotStarted
     }
-    public OlimpiadState State { get; set; } = OlimpiadState.NotStarted;
+    public OlympiadState State { get; set; } = OlympiadState.NotStarted;
     public void StartOlympiad()
     {
-        State = OlimpiadState.Started;
+        State = OlympiadState.Started;
     }
 
     public void EndOlimpiad()
     {
-        State = OlimpiadState.NotStarted;
+        State = OlympiadState.NotStarted;
     }
 
 }

@@ -65,7 +65,7 @@ public class Jury
 
             foreach (var student in prizeWinners)
             {
-                student.SetWinnerStage();
+                student.SetPrizeWinnerStage();
             }
         } else throw new WrongStateException("Жюри еще не подсчитали результаты");
     }

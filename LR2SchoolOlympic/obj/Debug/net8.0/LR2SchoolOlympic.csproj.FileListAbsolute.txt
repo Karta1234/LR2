@@ -91,3 +91,4 @@ C:\Users\artem\source\repos\LR2SchoolOlimpic\LR2SchoolOlympic\obj\Debug\net8.0\r
 C:\Users\artem\source\repos\LR2SchoolOlimpic\LR2SchoolOlympic\obj\Debug\net8.0\LR2SchoolOlympic.pdb
 C:\Users\artem\source\repos\LR2SchoolOlimpic\LR2SchoolOlympic\obj\Debug\net8.0\LR2SchoolOlympic.genruntimeconfig.cache
 C:\Users\artem\source\repos\LR2SchoolOlimpic\LR2SchoolOlympic\obj\Debug\net8.0\ref\LR2SchoolOlympic.dll
+C:\Users\artem\source\repos\LR2SchoolOlimpic\LR2SchoolOlympic\obj\Debug\net8.0\LR2SchoolOlympic.sourcelink.json

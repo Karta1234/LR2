@@ -5,7 +5,9 @@ public class OrganizitingCommittee
     public enum OrganizitingCommitteeState
     {
         StartedOlympiad,
-        NotStarted
+        NotStarted,
+        TakeParticipants,
+        ParticipantsStartToSolve
     }
     public string Location { get; set; }
     public DateTime StartTime { get; set; }
@@ -29,7 +31,7 @@ public class OrganizitingCommittee
             CentralCommission = new CentralCommission();
             Jury = new Jury();
             Olympiad.StartOlympiad();
-            State = OrganizitingCommitteeState.StartedOlympiad;
+            this.State = OrganizitingCommitteeState.StartedOlympiad;
         }
         else throw new WrongStateException("Олимпиада уже начата");
     }
@@ -39,15 +41,17 @@ public class OrganizitingCommittee
         if (State == OrganizitingCommitteeState.StartedOlympiad)
         {
             this.Participants = participants;
+            State = OrganizitingCommitteeState.TakeParticipants;
         }
         else throw new WrongStateException("Олимпиада не начата");
     }
 
     public void GiveTaskToParticipants()
     {
-        if (State == OrganizitingCommitteeState.StartedOlympiad)
+        if (State == OrganizitingCommitteeState.TakeParticipants)
         {
             Participants.TakeTask(CentralCommission.Task);
+            State = OrganizitingCommitteeState.ParticipantsStartToSolve;
         }
         else throw new WrongStateException("Олимпиада не начата");
     }

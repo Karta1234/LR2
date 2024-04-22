@@ -7,14 +7,14 @@ using System.Xml.Linq;
 
 namespace LR2SchoolOlimpic.Models
 {
-    public enum TeacherState
-    {
-        PreparingStudents,
-        NotPreparingStudents
-    }
+    
     internal class Teacher(string name, string surname)
     {
-
+        public enum TeacherState
+        {
+            PreparingStudents,
+            NotPreparingStudents
+        }
         public string Name { get; } = name;
         public string Surname { get; } = surname;
         public TeacherState State { get; set; } = TeacherState.NotPreparingStudents;
