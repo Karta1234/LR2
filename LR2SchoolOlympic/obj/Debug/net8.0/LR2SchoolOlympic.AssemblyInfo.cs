@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LR2SchoolOlympic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4107de6d5deb484766311f67308be153f8464c3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ff002b4074ac468c20ad79a72717b9e95b4e3fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("LR2SchoolOlympic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LR2SchoolOlympic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

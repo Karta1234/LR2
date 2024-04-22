@@ -1,46 +1,51 @@
-name: "CodeQL"
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# This workflow will build, test, sign and package a WPF or Windows Forms desktop application
+# built on .NET Core.
+# To learn how to migrate your existing application to .NET Core,
+# refer to https://docs.microsoft.com/en-us/dotnet/desktop-wpf/migration/convert-project-from-net-framework
+#
+# To configure this workflow:
+#
+# 1. Configure environment variables
+# GitHub sets default environment variables for every workflow run.
+# Replace the variables relative to your project in the "env" section below.
+#
+#
+
+name: .NET Core Desktop
 
 on:
   push:
     branches: [ "master" ]
-    paths:
-    - '**.cs'
-    - '**.csproj'
   pull_request:
     branches: [ "master" ]
-    paths:
-    - '**.cs'
-    - '**.csproj'
-  schedule:
-    - cron: '0 8 * * 4'
 
 jobs:
-  analyze:
 
-    name: analyze
-    runs-on: ubuntu-latest
+  build:
 
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['csharp']
-
+    runs-on: windows-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v4
       with:
-        fetch-depth: 2
-
-    - run: git checkout HEAD^2
-      if: ${{ github.event_name == 'pull_request' }}
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
+        fetch-depth: 0
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
       with:
-        languages: ${{ matrix.language }}
+        dotnet-version: '7.0.x'
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+    - name: Install dependencies
+      run: dotnet restore LR2SchoolOlympic\LR2SchoolOlympic.sln
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+    - name: Build project
+      run: dotnet build LR2SchoolOlympic\LR2SchoolOlympic\LR2SchoolOlympic.csproj
+
+    - name: Cleanup
+      run: dotnet clean LR2SchoolOlympic\LR2SchoolOlympic.sln
