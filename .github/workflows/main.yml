@@ -47,7 +47,7 @@ jobs:
     - name: Build project
       run: dotnet build LR2SchoolOlympic\LR2SchoolOlympic.csproj
 
-      - name: Test project
+    - name: Test project
       run: dotnet test
 
     - name: Cleanup
